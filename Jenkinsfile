@@ -4,12 +4,12 @@ pipeline {
         stage ('Build Servlet Project') {
             steps {
                /*For Mac & Linux machine */
-                echo  'mvn clean package'
+                sh 'mvn clean package'
             }
             post{
                 success{
                     echo 'Now Archiving ....'
-                     archiveArtifacts artifacts : '**/*.war'
+                    archiveArtifacts artifacts : '**/*.war'
                 }
             }
         }
