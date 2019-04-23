@@ -4,7 +4,7 @@ pipeline {
         stage ('Build Servlet Project') {
             steps {
                /*For Mac & Linux machine */
-                sh  'mvn clean package'
+                echo  'mvn clean package'
             }
              post{
                 success{
